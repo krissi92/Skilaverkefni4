@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="SQL Server - @hrnem.ru.is" uuid="148f5991-0d90-4cd2-906d-45ff1a211705">
+      <secret-storage>master_key</secret-storage>
+      <first-sync>true</first-sync>
+      <user-name>hshkristjanhar12</user-name>
+    </data-source>
+  </component>
+</project>
