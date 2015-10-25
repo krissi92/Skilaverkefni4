@@ -1,6 +1,5 @@
 package controllers;
 
-
 import is.rufan.user.data.UserNotFoundException;
 import is.rufan.user.domain.User;
 import is.rufan.user.service.UserService;

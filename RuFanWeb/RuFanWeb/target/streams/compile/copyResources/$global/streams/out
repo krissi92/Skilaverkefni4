@@ -1,6 +1,6 @@
 [debug] Copy resource mappings: 
-[debug] 	(C:\Skilaverkefni4\RuFanWeb\RuFanWeb\conf\application.conf,C:\Skilaverkefni4\RuFanWeb\RuFanWeb\target\scala-2.11\classes\application.conf)
-[debug] 	(C:\Skilaverkefni4\RuFanWeb\RuFanWeb\conf\logback.xml,C:\Skilaverkefni4\RuFanWeb\RuFanWeb\target\scala-2.11\classes\logback.xml)
-[debug] 	(C:\Skilaverkefni4\RuFanWeb\RuFanWeb\conf\routes,C:\Skilaverkefni4\RuFanWeb\RuFanWeb\target\scala-2.11\classes\routes)
-[debug] 	(C:\Skilaverkefni4\RuFanWeb\RuFanWeb\conf\userapp.xml,C:\Skilaverkefni4\RuFanWeb\RuFanWeb\target\scala-2.11\classes\userapp.xml)
-[debug] 	(C:\Skilaverkefni4\RuFanWeb\RuFanWeb\conf\userdata.xml,C:\Skilaverkefni4\RuFanWeb\RuFanWeb\target\scala-2.11\classes\userdata.xml)
+[debug] 	(/Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/conf/application.conf,/Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/target/scala-2.11/classes/application.conf)
+[debug] 	(/Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/conf/logback.xml,/Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/target/scala-2.11/classes/logback.xml)
+[debug] 	(/Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/conf/routes,/Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/target/scala-2.11/classes/routes)
+[debug] 	(/Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/conf/userapp.xml,/Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/target/scala-2.11/classes/userapp.xml)
+[debug] 	(/Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/conf/userdata.xml,/Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/target/scala-2.11/classes/userdata.xml)

@@ -67,8 +67,8 @@ Seq[Any](format.raw/*1.30*/("""
 object index extends index_Scope0.index
               /*
                   -- GENERATED --
-                  DATE: Thu Oct 22 22:13:23 GMT 2015
-                  SOURCE: C:/Skilaverkefni4/RuFanWeb/RuFanWeb/app/views/index.scala.html
+                  DATE: Sat Oct 24 14:12:16 GMT 2015
+                  SOURCE: /Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/app/views/index.scala.html
                   HASH: 2fec2e9f74c6b71068e80df8cb037bcec9e6feaf
                   MATRIX: 745->1|896->29|924->61|951->63|970->74|1009->76|1041->82|1098->114|1133->141|1172->143|1209->153|1347->264|1396->292|1558->437|1571->442|1610->443|1646->452|1686->465|1701->471|1774->523|1813->532
                   LINES: 27->1|32->1|34->4|35->5|35->5|35->5|37->7|39->9|39->9|39->9|41->11|43->13|43->13|47->17|47->17|47->17|48->18|48->18|48->18|48->18|49->19

@@ -9,7 +9,7 @@ POST       /signup                  controllers.SignupController.signup()
 GET        /login                   controllers.LoginController.blank()
 POST       /login                   controllers.LoginController.login()
 GET        /logout                  controllers.LoginController.logout()
-GET        /userid                  controllers.UserController.getUserProfile(int userid)
+GET        /user                    controllers.UserController.getUserProfile()
 
 
 # Map static resources from the /public folder to the /assets URL path

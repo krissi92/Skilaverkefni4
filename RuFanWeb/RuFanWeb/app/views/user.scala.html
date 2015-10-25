@@ -1,5 +1,55 @@
-@(user: is.rufan.user.domain.User)
+@(accountForm: Form[is.rufan.user.domain.UserRegistration])
 
-@main("Hello friend", nav = "user") {
+@import helper._
 
+@main("Modify Profile", nav = "userProfile") {
+    @helper.form(action = routes.UserController.getUserProfile()) {
+        <fieldset>
+            <legend>Account information</legend>
+            @inputText(
+                accountForm("username"),
+                '_label -> "Username",
+                '_help -> "Please enter your username.",
+                '_error -> accountForm.globalError
+            )
+            @inputText(
+                accountForm("name"),
+                '_label -> "Name",
+                '_help -> "Please provide your first name.",
+                '_error -> accountForm.globalError
+            )
+            @inputText(
+                accountForm("email"),
+                '_label -> "Email",
+                '_help -> "Enter a valid email address."
+            )
+            @inputPassword(
+                accountForm("password"),
+                '_label -> "Password",
+                '_help -> "A password must be at least 6 characters. "
+            )
+            @inputPassword(
+                accountForm("repeatPassword"),
+                '_label -> "Repeat password",
+                '_help -> "Please repeat your password again.",
+                '_error -> accountForm.globalError
+            )
+            @inputText(
+                accountForm("favoriteTeam"),
+                '_label -> "Favorite team"
+            )
+            @inputText(
+                accountForm("cardType"),
+                '_label -> "Card type"
+            )
+            @inputText(
+                accountForm("cardNumber"),
+                '_label -> "Card number"
+            )
+            @inputText(
+                accountForm("cardExpirationDate"),
+                '_label -> "Card expiration date"
+            )
+        </fieldset>
+    }
 }

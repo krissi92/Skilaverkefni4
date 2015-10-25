@@ -56,8 +56,8 @@ Seq[Any](format.raw/*1.35*/("""
 object summary extends summary_Scope0.summary
               /*
                   -- GENERATED --
-                  DATE: Thu Oct 22 22:13:23 GMT 2015
-                  SOURCE: C:/Skilaverkefni4/RuFanWeb/RuFanWeb/app/views/summary.scala.html
+                  DATE: Sat Oct 24 14:12:16 GMT 2015
+                  SOURCE: /Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/app/views/summary.scala.html
                   HASH: 657caea280c56643fc0e4d9d1d572f8498d99f50
                   MATRIX: 768->1|896->34|924->37|972->77|1011->79|1043->85|1106->122|1118->126|1152->140
                   LINES: 27->1|32->1|34->3|34->3|34->3|36->5|37->6|37->6|37->6

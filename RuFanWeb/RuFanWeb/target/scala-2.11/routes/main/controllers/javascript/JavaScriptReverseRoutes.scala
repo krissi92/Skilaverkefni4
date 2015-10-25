@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Skilaverkefni4/RuFanWeb/RuFanWeb/conf/routes
-// @DATE:Thu Oct 22 22:13:22 GMT 2015
+// @SOURCE:/Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/conf/routes
+// @DATE:Sat Oct 24 15:23:41 GMT 2015
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -14,6 +14,26 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers.javascript {
   import ReverseRouteContext.empty
+
+  // @LINE:16
+  class ReverseAssets(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:16
+    def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Assets.versioned",
+      """
+        function(file) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[PathBindable[Asset]].javascriptUnbind + """)("file", file)})
+        }
+      """
+    )
+  
+  }
 
   // @LINE:7
   class ReverseSignupController(_prefix: => String) {
@@ -39,6 +59,26 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "signup"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:12
+  class ReverseUserController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:12
+    def getUserProfile: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.getUserProfile",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "user"})
         }
       """
     )
@@ -79,26 +119,6 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "login"})
-        }
-      """
-    )
-  
-  }
-
-  // @LINE:15
-  class ReverseAssets(_prefix: => String) {
-
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:15
-    def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.Assets.versioned",
-      """
-        function(file) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[PathBindable[Asset]].javascriptUnbind + """)("file", file)})
         }
       """
     )

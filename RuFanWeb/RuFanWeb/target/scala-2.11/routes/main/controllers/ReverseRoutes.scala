@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Skilaverkefni4/RuFanWeb/RuFanWeb/conf/routes
-// @DATE:Thu Oct 22 22:13:22 GMT 2015
+// @SOURCE:/Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/conf/routes
+// @DATE:Sat Oct 24 15:23:41 GMT 2015
 
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
 import play.core.routing.{ HandlerDef, ReverseRouteContext, queryString, dynamicString }
@@ -12,6 +12,21 @@ import _root_.play.libs.F
 
 // @LINE:6
 package controllers {
+
+  // @LINE:16
+  class ReverseAssets(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:16
+    def versioned(file:Asset): Call = {
+      implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
+      Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[Asset]].unbind("file", file))
+    }
+  
+  }
 
   // @LINE:7
   class ReverseSignupController(_prefix: => String) {
@@ -30,6 +45,21 @@ package controllers {
     def blank(): Call = {
       import ReverseRouteContext.empty
       Call("GET", _prefix + { _defaultPrefix } + "signup")
+    }
+  
+  }
+
+  // @LINE:12
+  class ReverseUserController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:12
+    def getUserProfile(): Call = {
+      import ReverseRouteContext.empty
+      Call("GET", _prefix + { _defaultPrefix } + "user")
     }
   
   }
@@ -57,21 +87,6 @@ package controllers {
     def login(): Call = {
       import ReverseRouteContext.empty
       Call("POST", _prefix + { _defaultPrefix } + "login")
-    }
-  
-  }
-
-  // @LINE:15
-  class ReverseAssets(_prefix: => String) {
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:15
-    def versioned(file:Asset): Call = {
-      implicit val _rrc = new ReverseRouteContext(Map(("path", "/public")))
-      Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[Asset]].unbind("file", file))
     }
   
   }

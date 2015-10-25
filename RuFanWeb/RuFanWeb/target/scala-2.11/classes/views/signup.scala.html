@@ -34,6 +34,22 @@
                 '_help -> "Please repeat your password again.",
                 '_error -> signupForm.globalError
             )
+            @inputText(
+                signupForm("favoriteTeam"),
+                '_label -> "Favorite team"
+            )
+            @inputText(
+                signupForm("cardType"),
+                '_label -> "Card type"
+            )
+            @inputText(
+                signupForm("cardNumber"),
+                '_label -> "Card number"
+            )
+            @inputText(
+                signupForm("cardExpirationDate"),
+                '_label -> "Card expiration date"
+            )
         </fieldset>
         <fieldset>
         @checkbox(

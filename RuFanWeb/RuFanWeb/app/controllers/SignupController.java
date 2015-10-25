@@ -4,12 +4,9 @@ import is.rufan.user.domain.UserRegistration;
 import is.rufan.user.service.UserService;
 import play.mvc.*;
 import play.data.*;
-
 import views.html.signup;
 import views.html.summary;
-
 import static play.data.Form.*;
-
 
 public class SignupController extends UserController
 {
