@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/conf/routes
-// @DATE:Sat Oct 24 15:23:41 GMT 2015
+// @DATE:Sun Oct 25 14:19:32 GMT 2015
 
 package router
 
@@ -17,14 +17,16 @@ import _root_.play.libs.F
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
-  Application_4: controllers.Application,
+  Application_5: controllers.Application,
   // @LINE:7
   SignupController_0: controllers.SignupController,
   // @LINE:9
   LoginController_3: controllers.LoginController,
   // @LINE:12
   UserController_1: controllers.UserController,
-  // @LINE:16
+  // @LINE:13
+  TeamController_4: controllers.TeamController,
+  // @LINE:17
   Assets_2: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -32,22 +34,24 @@ class Routes(
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
-    Application_4: controllers.Application,
+    Application_5: controllers.Application,
     // @LINE:7
     SignupController_0: controllers.SignupController,
     // @LINE:9
     LoginController_3: controllers.LoginController,
     // @LINE:12
     UserController_1: controllers.UserController,
-    // @LINE:16
+    // @LINE:13
+    TeamController_4: controllers.TeamController,
+    // @LINE:17
     Assets_2: controllers.Assets
-  ) = this(errorHandler, Application_4, SignupController_0, LoginController_3, UserController_1, Assets_2, "/")
+  ) = this(errorHandler, Application_5, SignupController_0, LoginController_3, UserController_1, TeamController_4, Assets_2, "/")
 
   import ReverseRouteContext.empty
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, Application_4, SignupController_0, LoginController_3, UserController_1, Assets_2, prefix)
+    new Routes(errorHandler, Application_5, SignupController_0, LoginController_3, UserController_1, TeamController_4, Assets_2, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -62,6 +66,7 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """controllers.LoginController.login()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """logout""", """controllers.LoginController.logout()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """user""", """controllers.UserController.getUserProfile()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/teams""", """controllers.TeamController.getTeams()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -75,7 +80,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix)))
   )
   private[this] lazy val controllers_Application_index0_invoker = createInvoker(
-    Application_4.index(),
+    Application_5.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Application",
@@ -189,11 +194,28 @@ class Routes(
     )
   )
 
-  // @LINE:16
-  private[this] lazy val controllers_Assets_versioned7_route = Route("GET",
+  // @LINE:13
+  private[this] lazy val controllers_TeamController_getTeams7_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/teams")))
+  )
+  private[this] lazy val controllers_TeamController_getTeams7_invoker = createInvoker(
+    TeamController_4.getTeams(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.TeamController",
+      "getTeams",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """api/teams"""
+    )
+  )
+
+  // @LINE:17
+  private[this] lazy val controllers_Assets_versioned8_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned7_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned8_invoker = createInvoker(
     Assets_2.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -212,7 +234,7 @@ class Routes(
     // @LINE:6
     case controllers_Application_index0_route(params) =>
       call { 
-        controllers_Application_index0_invoker.call(Application_4.index())
+        controllers_Application_index0_invoker.call(Application_5.index())
       }
   
     // @LINE:7
@@ -251,10 +273,16 @@ class Routes(
         controllers_UserController_getUserProfile6_invoker.call(UserController_1.getUserProfile())
       }
   
-    // @LINE:16
-    case controllers_Assets_versioned7_route(params) =>
+    // @LINE:13
+    case controllers_TeamController_getTeams7_route(params) =>
+      call { 
+        controllers_TeamController_getTeams7_invoker.call(TeamController_4.getTeams())
+      }
+  
+    // @LINE:17
+    case controllers_Assets_versioned8_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned7_invoker.call(Assets_2.versioned(path, file))
+        controllers_Assets_versioned8_invoker.call(Assets_2.versioned(path, file))
       }
   }
 }

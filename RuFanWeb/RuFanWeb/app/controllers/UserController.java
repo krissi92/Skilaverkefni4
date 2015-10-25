@@ -24,6 +24,7 @@ public class UserController extends Controller  {
 
       UserRegistration userAccount = new UserRegistration();
       userAccount.setId(currentUser.getId());
+      userAccount.setUsername(currentUser.getUsername());
       userAccount.setName(currentUser.getName());
       userAccount.setEmail(currentUser.getEmail());
       userAccount.setPassword(currentUser.getPassword());
@@ -39,9 +40,5 @@ public class UserController extends Controller  {
     else {
       return null;
     }
-  }
-
-  public Result changeUserProfile() {
-    return null;
   }
 }
