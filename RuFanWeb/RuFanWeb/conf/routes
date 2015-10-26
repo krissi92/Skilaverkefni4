@@ -10,6 +10,8 @@ GET         /login                  controllers.LoginController.blank()
 POST        /login                  controllers.LoginController.login()
 GET         /logout                 controllers.LoginController.logout()
 GET         /user                   controllers.UserController.getUserProfile()
+POST        /user                   controllers.UserController.postUserProfile()
+
 GET         /api/teams              controllers.TeamController.getTeams()
 
 

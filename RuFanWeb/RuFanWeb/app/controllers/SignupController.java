@@ -30,7 +30,7 @@ public class SignupController extends UserController
 
     if(service.getUserByUsername(filledForm.field("username").value()) != null)
     {
-        filledForm.reject("username", "Username already exists");
+      filledForm.reject("username", "Username already exists");
     }
 
     if (filledForm.field("username").value().length() < 4)
