@@ -73,9 +73,9 @@ public class Game
     this.venue = venue;
   }
 
-  @Override
+  /*@Override
   public String toString()
   {
     return "Game (" + getGameId() + ") " + getTeamHome().getTeamId() + " - " + getTeamAway().getTeamId() + " at " + getStartTime();
-  }
+  }*/
 }

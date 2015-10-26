@@ -26,5 +26,7 @@
     </bean>
 
     <bean id="gameData" class="is.rufan.team.data.GameData"/>
+    <bean id="venueData" class="is.rufan.team.data.VenueData"/>
     <bean id="tournamentData" class="is.rufan.tournament.data.TournamentData"/>
+    <bean id="teamData" class="is.rufan.team.data.TeamData"/>
 </beans>

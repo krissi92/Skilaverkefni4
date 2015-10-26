@@ -1,6 +1,7 @@
 package is.rufan.tournament.test;
 
 import is.rufan.team.domain.Game;
+import is.rufan.team.service.GameService;
 import is.rufan.tournament.domain.Tournament;
 import is.rufan.tournament.service.TournamentService;
 import org.springframework.context.ApplicationContext;
@@ -15,36 +16,31 @@ public class TestingTournaments {
     public TestingTournaments(){
         ApplicationContext applicationContext = new FileSystemXmlApplicationContext("classpath:tournamentapp.xml");
         TournamentService tournamentService = (TournamentService)applicationContext.getBean("tournamentService");
+        GameService gameService = (GameService)applicationContext.getBean("gameService");
+
 
         System.out.println("Start Test");
 
         Tournament tour = new Tournament();
-        tour.setName("Penis");
+        tour.setName("RufanTournament");
         tour.setEndTime(new Date());
-        tour.setStartTime(new Date());
-        tour.setLeagueName("hlölli");
-        tour.setStatus("TEST");
-        tour.setTournamentId(1);
+        tour.setStartTime(new Date()); //ath
+        tour.setLeagueName("Rufan");
+        tour.setStatus("STATUS_ACTIVE");
+        tour.setTournamentId(3);
 
 
-        Game test1 = new Game();
-        test1.setGameId(123);
-        test1.setStartTime(new Date());
-        test1.setTeamAway(null);
-        test1.setTeamHome(null);
-        test1.setVenue(null);
+        Game test1 = gameService.getGamebyId(1546789);
+        Game test2 = gameService.getGamebyId(1546791);
+        Game test3 = gameService.getGamebyId(1546793);
+        Game test4 = gameService.getGamebyId(1546804);
 
-        Game test2 = new Game();
-        test2.setGameId(456);
-        test2.setStartTime(new Date());
-        test2.setTeamAway(null);
-        test2.setTeamHome(null);
-        test2.setVenue(null);
 
         List<Game> testerList = new ArrayList<Game>();
         testerList.add(test1);
         testerList.add(test2);
-
+        testerList.add(test3);
+        testerList.add(test4);
         tour.setTournamentGames(testerList);
 
         tournamentService.addTournament(tour);
