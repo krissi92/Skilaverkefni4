@@ -1,0 +1,17 @@
+@(FantasyForm: Form[is.rufan.player.domain.Player])
+@import helper._
+@main("Fantasy teams") {
+    @helper.form(action = routes.TournamentController.editFantasyTeam()){
+        <fieldset>
+            <legend>Your Fantasy Team</legend>
+            @select(
+                FantasyForm("firstName")),
+                option(),
+
+            )
+        </fieldset>
+
+    }
+
+}
+

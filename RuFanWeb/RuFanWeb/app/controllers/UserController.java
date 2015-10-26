@@ -70,7 +70,7 @@ public class UserController extends Controller  {
   public Result postUserProfile() {
     Form<User> userForm = form(User.class);
     Form<User> updatedForm = userForm.bindFromRequest();
-    UserService userService = (UserService) ctx.getBean("userService");
+      UserService userService = (UserService) ctx.getBean("userService");
     User oldUser = userService.getUserByUsername(session("username"));
 
     if (updatedForm.field("password").value().equals((updatedForm.field("repeatPassword").value()))) {
