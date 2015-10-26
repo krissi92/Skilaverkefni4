@@ -17,11 +17,11 @@ public class GameRowMapper implements RowMapper<Game>{
     TeamDataGateway teamDataGateway;
     VenueDataGateway venueDataGateway;
 
-    public GameRowMapper() throws RuException {
+    /*public GameRowMapper() throws RuException {
         factory = RuDataAccessFactory.getInstance("gamedata.xml");
         teamDataGateway = (TeamDataGateway) factory.getDataAccess("teamData");
         venueDataGateway = (VenueDataGateway) factory.getDataAccess("venueData");
-    }
+    }*/
 
     public Game mapRow(ResultSet rs, int rowNum) throws SQLException
     {

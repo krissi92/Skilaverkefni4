@@ -72,10 +72,10 @@ Seq[Any](format.raw/*1.47*/("""
 object login extends login_Scope0.login
               /*
                   -- GENERATED --
-                  DATE: Sat Oct 24 14:12:16 GMT 2015
-                  SOURCE: /Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/app/views/login.scala.html
-                  HASH: 038a9421f07ec4f351b5f4c382c65f018d99dfe2
-                  MATRIX: 770->1|925->46|953->65|980->67|1024->103|1063->105|1094->111|1108->117|1160->161|1199->163|1234->172|1327->239|1501->392|1542->406|1669->512|1705->521|1865->654|1880->660|1919->678|1994->723
+                  DATE: Mon Oct 26 19:16:12 GMT 2015
+                  SOURCE: C:/Skilaverkefni4/RuFanWeb/RuFanWeb/app/views/login.scala.html
+                  HASH: 0b77a809eb548372fee82047cd57daac4509c4f6
+                  MATRIX: 770->1|925->46|955->68|983->71|1027->107|1066->109|1098->116|1112->122|1164->166|1203->168|1239->178|1334->247|1512->404|1554->419|1684->528|1721->538|1885->675|1900->681|1939->699|2016->746
                   LINES: 27->1|32->1|34->4|35->5|35->5|35->5|36->6|36->6|36->6|36->6|37->7|39->9|43->13|44->14|47->17|48->18|52->22|52->22|52->22|54->24
                   -- GENERATED --
               */

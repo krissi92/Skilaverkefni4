@@ -3,6 +3,8 @@ package controllers;
 import is.rufan.user.data.UserNotFoundException;
 import is.rufan.user.domain.User;
 import is.rufan.user.service.UserService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 import play.data.*;
 import play.mvc.*;
 
@@ -13,6 +15,8 @@ import views.html.login;
 
 public class LoginController extends UserController
 {
+  protected ApplicationContext ctx = new FileSystemXmlApplicationContext("/conf/userapp.xml");
+
   final static Form<User> loginForm = form(User.class);
 
   public Result blank()
@@ -24,8 +28,8 @@ public class LoginController extends UserController
   {
     Form<User> filledForm = loginForm.bindFromRequest();
 
-    UserService service = (UserService) ctx.getBean("userService");
 
+    UserService service = (UserService) ctx.getBean("userService");
 
     User user = service.getUserByUsername(filledForm.field("username").value());
     if (user == null)

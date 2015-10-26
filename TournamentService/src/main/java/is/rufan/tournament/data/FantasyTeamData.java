@@ -44,7 +44,7 @@ public class FantasyTeamData extends RuData implements FantasyTeamDataGateway {
     }
 
     public FantasyTeam getFantasyTeam(int userId) {
-        String sql = "select * from fantasyteams where userid = ?";
+        String sql = "select * from fantasyteam where userid = ?";
         JdbcTemplate queryFantasy = new JdbcTemplate(getDataSource());
         FantasyTeam fantasyTeam = queryFantasy.queryForObject(sql, new Object[] {userId}, new FantasyTeamRowMapper());
         return fantasyTeam;

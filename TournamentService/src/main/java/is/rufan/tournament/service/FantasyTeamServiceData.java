@@ -20,7 +20,7 @@ public class FantasyTeamServiceData implements FantasyTeamService {
 
     public FantasyTeamServiceData() throws RuException{
 
-        factory = RuDataAccessFactory.getInstance("fantasyteam.xml"); //TODO
+        factory = RuDataAccessFactory.getInstance("fantasyteamdata.xml"); //TODO
         playerDataGateway = (PlayerDataGateway) factory.getDataAccess("playerData");
         fantasyTeamDataGateway = (FantasyTeamDataGateway) factory.getDataAccess("fantasyTeamData");
     }

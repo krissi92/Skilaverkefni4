@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/conf/routes
-// @DATE:Sun Oct 25 14:19:32 GMT 2015
+// @SOURCE:C:/Skilaverkefni4/RuFanWeb/RuFanWeb/conf/routes
+// @DATE:Mon Oct 26 19:41:48 GMT 2015
 
 
 package router {

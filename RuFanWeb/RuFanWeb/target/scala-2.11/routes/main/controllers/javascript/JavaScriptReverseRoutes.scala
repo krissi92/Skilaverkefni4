@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/conf/routes
-// @DATE:Sun Oct 25 14:19:32 GMT 2015
+// @SOURCE:C:/Skilaverkefni4/RuFanWeb/RuFanWeb/conf/routes
+// @DATE:Mon Oct 26 19:41:48 GMT 2015
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:17
+  // @LINE:19
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:17
+    // @LINE:19
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -72,6 +72,16 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:13
+    def postUserProfile: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.UserController.postUserProfile",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "user"})
+        }
+      """
+    )
   
     // @LINE:12
     def getUserProfile: JavaScriptReverseRoute = JavaScriptReverseRoute(
@@ -145,7 +155,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:13
+  // @LINE:14
   class ReverseTeamController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -153,12 +163,32 @@ package controllers.javascript {
     }
 
   
-    // @LINE:13
+    // @LINE:14
     def getTeams: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.TeamController.getTeams",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/teams"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:15
+  class ReverseTournamentController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:15
+    def fantasyTeam: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.TournamentController.fantasyTeam",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "fantasyTeam"})
         }
       """
     )

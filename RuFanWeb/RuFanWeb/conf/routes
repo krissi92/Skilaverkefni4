@@ -12,7 +12,7 @@ GET         /logout                 controllers.LoginController.logout()
 GET         /user                   controllers.UserController.getUserProfile()
 POST        /user                   controllers.UserController.postUserProfile()
 GET         /api/teams              controllers.TeamController.getTeams()
-GET         /api/fantasyTeam        controllers.TournamentController.fantasyTeam()
+GET         /fantasyTeam        controllers.TournamentController.fantasyTeam()
 #GET         /api/fantasyTeams
 
 # Map static resources from the /public folder to the /assets URL path

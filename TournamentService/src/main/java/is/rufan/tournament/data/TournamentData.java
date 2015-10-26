@@ -74,7 +74,7 @@ public class TournamentData extends RuData implements TournamentDataGateway{
         return tournaments;
     }
 
-    public List<Game> getTournamentGames(int tournamentId) throws RuException { //ATH
+    public List<Game> getTournamentGames(int tournamentId) { //ATH
 
 
         String Gsql = "select * from games";

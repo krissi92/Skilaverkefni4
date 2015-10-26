@@ -1,5 +1,7 @@
 package controllers;
 
+import is.rufan.tournament.domain.FantasyTeam;
+import is.rufan.tournament.service.FantasyTeamService;
 import is.rufan.tournament.service.TournamentService;
 import is.rufan.user.domain.User;
 import is.rufan.user.service.UserService;
@@ -19,17 +21,17 @@ import views.html.fantasyTeam;
 public class TournamentController extends Controller {
     protected ApplicationContext ctx = new FileSystemXmlApplicationContext("/conf/userapp.xml");
     final TournamentService tournamentService = (TournamentService)ctx.getBean("tournamentService");
+    final FantasyTeamService fantasyTeamService = (FantasyTeamService)ctx.getBean("fantasyTeamService");
     final UserService userService = (UserService)ctx.getBean("userService");
 
     public Result fantasyTeam() {
         String username = session("username");
         User currentUser = userService.getUserByUsername(username);
-        //Fantasyteam fantasyteam = tournamentService.getFantasyTeam(); ???
 
         // User has to be logged in
         if(username != null) {
-            //if(currentUser.getId() == fantasyteam.getUserID()) {}
-            return ok(fantasyTeam.render());
+            FantasyTeam fantasyteamye = fantasyTeamService.getFantasyTeam(currentUser.getId());
+            return ok(fantasyTeam.render(fantasyteamye));
         }
         else {
             return redirect("/login");

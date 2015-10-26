@@ -56,10 +56,10 @@ Seq[Any](format.raw/*1.35*/("""
 object summary extends summary_Scope0.summary
               /*
                   -- GENERATED --
-                  DATE: Sat Oct 24 14:12:16 GMT 2015
-                  SOURCE: /Users/thordisjona/IdeaProjects/Skilaverkefni4/RuFanWeb/RuFanWeb/app/views/summary.scala.html
-                  HASH: 657caea280c56643fc0e4d9d1d572f8498d99f50
-                  MATRIX: 768->1|896->34|924->37|972->77|1011->79|1043->85|1106->122|1118->126|1152->140
+                  DATE: Mon Oct 26 19:16:12 GMT 2015
+                  SOURCE: C:/Skilaverkefni4/RuFanWeb/RuFanWeb/app/views/summary.scala.html
+                  HASH: 261665fff5f98f960d0623a2edc649e615128cb2
+                  MATRIX: 768->1|896->34|926->39|974->79|1013->81|1047->89|1111->127|1123->131|1157->145
                   LINES: 27->1|32->1|34->3|34->3|34->3|36->5|37->6|37->6|37->6
                   -- GENERATED --
               */

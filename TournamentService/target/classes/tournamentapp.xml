@@ -11,4 +11,6 @@
 
     <bean id="tournamentService" class="is.rufan.tournament.service.TournamentServiceData"/>
     <bean id="gameService" class="is.rufan.team.service.GameServiceData"/>
+    <bean id="teamService" class="is.rufan.team.service.TeamServiceData"/>
 </beans>
+
