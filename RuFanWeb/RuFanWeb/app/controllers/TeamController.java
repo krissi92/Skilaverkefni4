@@ -6,6 +6,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import play.libs.Json;
 import play.mvc.*;
+import views.html.fantasyTeam;
+
 import java.util.List;
 
 /**

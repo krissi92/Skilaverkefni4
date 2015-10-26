@@ -1,0 +1,17 @@
+@(fantasyTeams: List[is.rufan.team.domain.Team])
+
+@main("Fantasy teams") {
+  <div class ="fantasyteam">
+    @for(teams <- fantasyTeams) {
+      <!--if(team.-->
+      <table class="fantasyTeamsTable">
+        <thead>
+          <th>Player</th>
+          <th>Position</th>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    }
+  </div>
+}
