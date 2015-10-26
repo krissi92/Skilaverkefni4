@@ -43,7 +43,7 @@ public class TournamentServiceData implements TournamentService {
         return tournamentDataGateway.getTournament(tournamentId);
     }
 
-    public List<Game> getTournamentGames(int tournamentId) {
+    public List<Game> getTournamentGames(int tournamentId) throws RuException {
         return tournamentDataGateway.getTournamentGames(tournamentId);
     }
 }

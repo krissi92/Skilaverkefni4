@@ -2,6 +2,7 @@ package is.rufan.tournament.data;
 
 import is.rufan.team.domain.Game;
 import is.rufan.tournament.domain.Tournament;
+import is.ruframework.domain.RuException;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ public interface TournamentDataGateway {
     public void addTournament(Tournament tour);
     public Tournament getTournament(int tournamentId);
     public List<Tournament> getTournaments();
-    public List<Game> getTournamentGames(int tournamentId);
+    public List<Game> getTournamentGames(int tournamentId) throws RuException;
 
 
 }

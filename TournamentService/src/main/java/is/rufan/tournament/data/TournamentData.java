@@ -5,6 +5,7 @@ import is.rufan.tournament.domain.Tournament;
 
 import is.rufan.tournament.domain.TournamentGames;
 import is.ruframework.data.RuData;
+import is.ruframework.domain.RuException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -13,7 +14,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import java.util.*;
 
 /**
- * Created by Kristján on 23.10.2015.
+ * Created by Kristjï¿½n on 23.10.2015.
  */
 public class TournamentData extends RuData implements TournamentDataGateway{
 
@@ -73,7 +74,7 @@ public class TournamentData extends RuData implements TournamentDataGateway{
         return tournaments;
     }
 
-    public List<Game> getTournamentGames(int tournamentId) { //ATH
+    public List<Game> getTournamentGames(int tournamentId) throws RuException { //ATH
 
 
         String Gsql = "select * from games";
@@ -90,7 +91,7 @@ public class TournamentData extends RuData implements TournamentDataGateway{
         /*Compare them and return a list of games in the given tournament*/
         List <Game> result = new ArrayList<Game>();
         for(Game check : games){
-            if(tourgames.contains(check.getGameId())){//skítamix sem gæti ekki virkað !!
+            if(tourgames.contains(check.getGameId())){//skï¿½tamix sem gï¿½ti ekki virkaï¿½ !!
                 result.add(check);
             }
         }
