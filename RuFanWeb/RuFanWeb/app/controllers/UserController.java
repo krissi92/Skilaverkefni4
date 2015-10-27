@@ -9,16 +9,14 @@ import static play.data.Form.*;
 import play.data.*;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.summary;
 import views.html.user;
 
 /**
- * @(#)User Controller 25 Oct 2015 Kristján Harðarsson and Þórdís Jóna Jónsdóttir
+ *  @(#)User Controller 25 Oct 2015 Kristján Harðarsson and Þórdís Jóna Jónsdóttir
  *
- * Controller component which handles everything connected to the user.
- * Extends from Controller and uses Bean to access the Team Service and
- * add the information to the database.
- *
+ *  Controller component which handles everything connected to the user.
+ *  Extends from Controller and uses Bean to access the Team Service and
+ *  add the information to the database.
  */
 public class UserController extends Controller  {
   protected ApplicationContext ctx = new FileSystemXmlApplicationContext("/conf/userapp.xml");
@@ -26,11 +24,11 @@ public class UserController extends Controller  {
   final static Form<UserRegistration> accountForm = form(UserRegistration.class);
 
   /**
-   * A function which returns a form to the user like the signup form.
-   * Everything that the user has already filled in will be accessed from the
-   * database through the User Service and shown on the form.
+   *  A function which returns a form to the user like the signup form.
+   *  Everything that the user has already filled in will be accessed from the
+   *  database through the User Service and shown on the form.
    *
-   * @return the filled user form with information from the database
+   *  @return the filled user form with information from the database
    */
   public Result getUserProfile() {
     String username = session("username");
@@ -60,12 +58,12 @@ public class UserController extends Controller  {
   }
 
   /**
-   * A function which updates the user profile if the information is valid.
-   * It is not possible to change the username. Redirects the user to the
-   * user page which now has an updated user form.
+   *  A function which updates the user profile if the information is valid.
+   *  It is not possible to change the username. Redirects the user to the
+   *  user page which now has an updated user form.
    *
-   * @return redirect to the user page that is now updated if the form was valid.
-   * Else returns Bad Request with the form without the changes.
+   *  @return redirect to the user page that is now updated if the form was valid.
+   *  Else returns Bad Request with the form without the changes.
    */
   public Result postUserProfile() {
     Form<User> userForm = form(User.class);
@@ -81,10 +79,6 @@ public class UserController extends Controller  {
     }
     if (updatedForm.field("cardNumber").value().length() != 16) {
       updatedForm.reject("cardNumber", "Card number must be 16 letter.");
-    }
-    if (updatedForm.field("cardExpirationDate").value().length() > 4) {
-      updatedForm.reject("cardExpirationDate", "Card expiration date must be on the format" +
-              "MMYY");
     }
     if (updatedForm.hasErrors()) {
       return badRequest(user.render(accountForm));

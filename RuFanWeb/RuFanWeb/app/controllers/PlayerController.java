@@ -22,9 +22,13 @@ import views.html.user;
 import java.util.Collection;
 import java.util.List;
 
-public class PlayerController extends Controller
-{
-
+/**
+ *  @(#) Player Controller 23 Oct 2015 Kristján Harðarsson and Þórdís Jóna Jónsdóttir
+ *
+ *  Controller component which handles everything connected to the player.
+ *  Extends from Controller and uses Bean to access the Player Service.
+ */
+public class PlayerController extends Controller  {
     protected ApplicationContext ctx = new FileSystemXmlApplicationContext("/conf/userapp.xml");
     final PlayerService playerService = (PlayerService)ctx.getBean("playerService");
     final TournamentService tournamentService = (TournamentService)ctx.getBean("tournamentService");
@@ -32,33 +36,28 @@ public class PlayerController extends Controller
     final UserService userService = (UserService)ctx.getBean("userService");
     final static Form<Player> playerFormer = form(Player.class);
 
-    public Result getPlayers(int teamId){
+    public Result getPlayers(int teamId) {
         List<Player> players = playerService.getPlayers(teamId);
-
-
         return ok(Json.toJson(players));
     }
-    public Result getGoalkeepers(){
 
+    public Result getGoalkeepers() {
         List<Player> goalkeepers = playerService.getPlayerByPos(1);
-
         return ok(Json.toJson(goalkeepers));
     }
+
     public Result getForwards(){
         List<Player> goalkeepers = playerService.getPlayerByPos(2);
-
         return ok(Json.toJson(goalkeepers));
     }
+
     public Result getPositions(){
         Collection<Position> positions = playerService.getPositions();
-
         return ok(Json.toJson(positions));
-
     }
+
     public Result getPlayerPosition(int playerId){
         List<Position> playerPositions = playerService.getPlayerPos(playerId);
         return ok(Json.toJson(playerPositions));
-
     }
-
 }
