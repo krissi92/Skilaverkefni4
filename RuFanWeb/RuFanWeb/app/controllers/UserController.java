@@ -70,7 +70,7 @@ public class UserController extends Controller  {
   public Result postUserProfile() {
     Form<User> userForm = form(User.class);
     Form<User> updatedForm = userForm.bindFromRequest();
-      UserService userService = (UserService) ctx.getBean("userService");
+    UserService userService = (UserService) ctx.getBean("userService");
     User oldUser = userService.getUserByUsername(session("username"));
 
     if (updatedForm.field("password").value().equals((updatedForm.field("repeatPassword").value()))) {
@@ -79,9 +79,15 @@ public class UserController extends Controller  {
     if (updatedForm.field("password").value().length() < 6) {
       updatedForm.reject("password", "Passwords must be at least 6 letters");
     }
+    if (updatedForm.field("cardNumber").value().length() != 16) {
+      updatedForm.reject("cardNumber", "Card number must be 16 letter.");
+    }
+    if (updatedForm.field("cardExpirationDate").value().length() > 4) {
+      updatedForm.reject("cardExpirationDate", "Card expiration date must be on the format" +
+              "MMYY");
+    }
     if (updatedForm.hasErrors()) {
-      return redirect("/user");
-      //return badRequest(user.render(accountForm)); ?????
+      return badRequest(user.render(accountForm));
     }
     else {
       User currentUser = updatedForm.get();
