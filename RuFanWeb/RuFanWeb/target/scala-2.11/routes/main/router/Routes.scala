@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Skilaverkefni4/RuFanWeb/RuFanWeb/conf/routes
-// @DATE:Mon Oct 26 19:41:48 GMT 2015
+// @DATE:Tue Oct 27 03:29:37 GMT 2015
 
 package router
 
@@ -17,45 +17,49 @@ import _root_.play.libs.F
 class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
-  Application_6: controllers.Application,
+  Application_7: controllers.Application,
   // @LINE:7
-  SignupController_0: controllers.SignupController,
+  SignupController_1: controllers.SignupController,
   // @LINE:9
-  LoginController_4: controllers.LoginController,
+  LoginController_5: controllers.LoginController,
   // @LINE:12
-  UserController_2: controllers.UserController,
+  UserController_3: controllers.UserController,
   // @LINE:14
-  TeamController_5: controllers.TeamController,
+  TeamController_6: controllers.TeamController,
   // @LINE:15
-  TournamentController_1: controllers.TournamentController,
-  // @LINE:19
-  Assets_3: controllers.Assets,
+  TournamentController_2: controllers.TournamentController,
+  // @LINE:18
+  PlayerController_0: controllers.PlayerController,
+  // @LINE:27
+  Assets_4: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
 
    @javax.inject.Inject()
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
-    Application_6: controllers.Application,
+    Application_7: controllers.Application,
     // @LINE:7
-    SignupController_0: controllers.SignupController,
+    SignupController_1: controllers.SignupController,
     // @LINE:9
-    LoginController_4: controllers.LoginController,
+    LoginController_5: controllers.LoginController,
     // @LINE:12
-    UserController_2: controllers.UserController,
+    UserController_3: controllers.UserController,
     // @LINE:14
-    TeamController_5: controllers.TeamController,
+    TeamController_6: controllers.TeamController,
     // @LINE:15
-    TournamentController_1: controllers.TournamentController,
-    // @LINE:19
-    Assets_3: controllers.Assets
-  ) = this(errorHandler, Application_6, SignupController_0, LoginController_4, UserController_2, TeamController_5, TournamentController_1, Assets_3, "/")
+    TournamentController_2: controllers.TournamentController,
+    // @LINE:18
+    PlayerController_0: controllers.PlayerController,
+    // @LINE:27
+    Assets_4: controllers.Assets
+  ) = this(errorHandler, Application_7, SignupController_1, LoginController_5, UserController_3, TeamController_6, TournamentController_2, PlayerController_0, Assets_4, "/")
 
   import ReverseRouteContext.empty
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, Application_6, SignupController_0, LoginController_4, UserController_2, TeamController_5, TournamentController_1, Assets_3, prefix)
+    new Routes(errorHandler, Application_7, SignupController_1, LoginController_5, UserController_3, TeamController_6, TournamentController_2, PlayerController_0, Assets_4, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -73,6 +77,11 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """user""", """controllers.UserController.postUserProfile()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/teams""", """controllers.TeamController.getTeams()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """fantasyTeam""", """controllers.TournamentController.fantasyTeam()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """fantasyTeam""", """controllers.TournamentController.editFantasyTeams()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/goalkeepers""", """controllers.PlayerController.getGoalkeepers()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/positions""", """controllers.PlayerController.getPositions()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/players/$id<[^/]+>""", """controllers.PlayerController.getPlayers(id:Int)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/positions/$id<[^/]+>""", """controllers.PlayerController.getPlayerPosition(id:Int)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -86,7 +95,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix)))
   )
   private[this] lazy val controllers_Application_index0_invoker = createInvoker(
-    Application_6.index(),
+    Application_7.index(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Application",
@@ -103,7 +112,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("signup")))
   )
   private[this] lazy val controllers_SignupController_blank1_invoker = createInvoker(
-    SignupController_0.blank(),
+    SignupController_1.blank(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.SignupController",
@@ -120,7 +129,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("signup")))
   )
   private[this] lazy val controllers_SignupController_signup2_invoker = createInvoker(
-    SignupController_0.signup(),
+    SignupController_1.signup(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.SignupController",
@@ -137,7 +146,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login")))
   )
   private[this] lazy val controllers_LoginController_blank3_invoker = createInvoker(
-    LoginController_4.blank(),
+    LoginController_5.blank(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.LoginController",
@@ -154,7 +163,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("login")))
   )
   private[this] lazy val controllers_LoginController_login4_invoker = createInvoker(
-    LoginController_4.login(),
+    LoginController_5.login(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.LoginController",
@@ -171,7 +180,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("logout")))
   )
   private[this] lazy val controllers_LoginController_logout5_invoker = createInvoker(
-    LoginController_4.logout(),
+    LoginController_5.logout(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.LoginController",
@@ -188,7 +197,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user")))
   )
   private[this] lazy val controllers_UserController_getUserProfile6_invoker = createInvoker(
-    UserController_2.getUserProfile(),
+    UserController_3.getUserProfile(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.UserController",
@@ -205,7 +214,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user")))
   )
   private[this] lazy val controllers_UserController_postUserProfile7_invoker = createInvoker(
-    UserController_2.postUserProfile(),
+    UserController_3.postUserProfile(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.UserController",
@@ -222,7 +231,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/teams")))
   )
   private[this] lazy val controllers_TeamController_getTeams8_invoker = createInvoker(
-    TeamController_5.getTeams(),
+    TeamController_6.getTeams(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.TeamController",
@@ -239,7 +248,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("fantasyTeam")))
   )
   private[this] lazy val controllers_TournamentController_fantasyTeam9_invoker = createInvoker(
-    TournamentController_1.fantasyTeam(),
+    TournamentController_2.fantasyTeam(),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.TournamentController",
@@ -251,12 +260,97 @@ class Routes(
     )
   )
 
+  // @LINE:16
+  private[this] lazy val controllers_TournamentController_editFantasyTeams10_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("fantasyTeam")))
+  )
+  private[this] lazy val controllers_TournamentController_editFantasyTeams10_invoker = createInvoker(
+    TournamentController_2.editFantasyTeams(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.TournamentController",
+      "editFantasyTeams",
+      Nil,
+      "POST",
+      """""",
+      this.prefix + """fantasyTeam"""
+    )
+  )
+
+  // @LINE:18
+  private[this] lazy val controllers_PlayerController_getGoalkeepers11_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/goalkeepers")))
+  )
+  private[this] lazy val controllers_PlayerController_getGoalkeepers11_invoker = createInvoker(
+    PlayerController_0.getGoalkeepers(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.PlayerController",
+      "getGoalkeepers",
+      Nil,
+      "GET",
+      """GET         /api/players            controllers.PlayerController.getPlayers()""",
+      this.prefix + """api/goalkeepers"""
+    )
+  )
+
   // @LINE:19
-  private[this] lazy val controllers_Assets_versioned10_route = Route("GET",
+  private[this] lazy val controllers_PlayerController_getPositions12_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/positions")))
+  )
+  private[this] lazy val controllers_PlayerController_getPositions12_invoker = createInvoker(
+    PlayerController_0.getPositions(),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.PlayerController",
+      "getPositions",
+      Nil,
+      "GET",
+      """""",
+      this.prefix + """api/positions"""
+    )
+  )
+
+  // @LINE:20
+  private[this] lazy val controllers_PlayerController_getPlayers13_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/players/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_PlayerController_getPlayers13_invoker = createInvoker(
+    PlayerController_0.getPlayers(fakeValue[Int]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.PlayerController",
+      "getPlayers",
+      Seq(classOf[Int]),
+      "GET",
+      """""",
+      this.prefix + """api/players/$id<[^/]+>"""
+    )
+  )
+
+  // @LINE:21
+  private[this] lazy val controllers_PlayerController_getPlayerPosition14_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/positions/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_PlayerController_getPlayerPosition14_invoker = createInvoker(
+    PlayerController_0.getPlayerPosition(fakeValue[Int]),
+    HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.PlayerController",
+      "getPlayerPosition",
+      Seq(classOf[Int]),
+      "GET",
+      """""",
+      this.prefix + """api/positions/$id<[^/]+>"""
+    )
+  )
+
+  // @LINE:27
+  private[this] lazy val controllers_Assets_versioned15_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned10_invoker = createInvoker(
-    Assets_3.versioned(fakeValue[String], fakeValue[Asset]),
+  private[this] lazy val controllers_Assets_versioned15_invoker = createInvoker(
+    Assets_4.versioned(fakeValue[String], fakeValue[Asset]),
     HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
@@ -274,67 +368,97 @@ class Routes(
     // @LINE:6
     case controllers_Application_index0_route(params) =>
       call { 
-        controllers_Application_index0_invoker.call(Application_6.index())
+        controllers_Application_index0_invoker.call(Application_7.index())
       }
   
     // @LINE:7
     case controllers_SignupController_blank1_route(params) =>
       call { 
-        controllers_SignupController_blank1_invoker.call(SignupController_0.blank())
+        controllers_SignupController_blank1_invoker.call(SignupController_1.blank())
       }
   
     // @LINE:8
     case controllers_SignupController_signup2_route(params) =>
       call { 
-        controllers_SignupController_signup2_invoker.call(SignupController_0.signup())
+        controllers_SignupController_signup2_invoker.call(SignupController_1.signup())
       }
   
     // @LINE:9
     case controllers_LoginController_blank3_route(params) =>
       call { 
-        controllers_LoginController_blank3_invoker.call(LoginController_4.blank())
+        controllers_LoginController_blank3_invoker.call(LoginController_5.blank())
       }
   
     // @LINE:10
     case controllers_LoginController_login4_route(params) =>
       call { 
-        controllers_LoginController_login4_invoker.call(LoginController_4.login())
+        controllers_LoginController_login4_invoker.call(LoginController_5.login())
       }
   
     // @LINE:11
     case controllers_LoginController_logout5_route(params) =>
       call { 
-        controllers_LoginController_logout5_invoker.call(LoginController_4.logout())
+        controllers_LoginController_logout5_invoker.call(LoginController_5.logout())
       }
   
     // @LINE:12
     case controllers_UserController_getUserProfile6_route(params) =>
       call { 
-        controllers_UserController_getUserProfile6_invoker.call(UserController_2.getUserProfile())
+        controllers_UserController_getUserProfile6_invoker.call(UserController_3.getUserProfile())
       }
   
     // @LINE:13
     case controllers_UserController_postUserProfile7_route(params) =>
       call { 
-        controllers_UserController_postUserProfile7_invoker.call(UserController_2.postUserProfile())
+        controllers_UserController_postUserProfile7_invoker.call(UserController_3.postUserProfile())
       }
   
     // @LINE:14
     case controllers_TeamController_getTeams8_route(params) =>
       call { 
-        controllers_TeamController_getTeams8_invoker.call(TeamController_5.getTeams())
+        controllers_TeamController_getTeams8_invoker.call(TeamController_6.getTeams())
       }
   
     // @LINE:15
     case controllers_TournamentController_fantasyTeam9_route(params) =>
       call { 
-        controllers_TournamentController_fantasyTeam9_invoker.call(TournamentController_1.fantasyTeam())
+        controllers_TournamentController_fantasyTeam9_invoker.call(TournamentController_2.fantasyTeam())
+      }
+  
+    // @LINE:16
+    case controllers_TournamentController_editFantasyTeams10_route(params) =>
+      call { 
+        controllers_TournamentController_editFantasyTeams10_invoker.call(TournamentController_2.editFantasyTeams())
+      }
+  
+    // @LINE:18
+    case controllers_PlayerController_getGoalkeepers11_route(params) =>
+      call { 
+        controllers_PlayerController_getGoalkeepers11_invoker.call(PlayerController_0.getGoalkeepers())
       }
   
     // @LINE:19
-    case controllers_Assets_versioned10_route(params) =>
+    case controllers_PlayerController_getPositions12_route(params) =>
+      call { 
+        controllers_PlayerController_getPositions12_invoker.call(PlayerController_0.getPositions())
+      }
+  
+    // @LINE:20
+    case controllers_PlayerController_getPlayers13_route(params) =>
+      call(params.fromPath[Int]("id", None)) { (id) =>
+        controllers_PlayerController_getPlayers13_invoker.call(PlayerController_0.getPlayers(id))
+      }
+  
+    // @LINE:21
+    case controllers_PlayerController_getPlayerPosition14_route(params) =>
+      call(params.fromPath[Int]("id", None)) { (id) =>
+        controllers_PlayerController_getPlayerPosition14_invoker.call(PlayerController_0.getPlayerPosition(id))
+      }
+  
+    // @LINE:27
+    case controllers_Assets_versioned15_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned10_invoker.call(Assets_3.versioned(path, file))
+        controllers_Assets_versioned15_invoker.call(Assets_4.versioned(path, file))
       }
   }
 }

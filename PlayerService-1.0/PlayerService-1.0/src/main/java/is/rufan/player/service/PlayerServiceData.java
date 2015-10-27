@@ -34,7 +34,7 @@ public class PlayerServiceData implements PlayerService
 
   public List<Player> getPlayers(int teamId)
   {
-    return null;
+    return playerDataGateway.getPlayersInTeam(teamId);
   }
 
   public List<Player> getPlayersByTeamAbbreviation(int leagueId, String teamAbbreviation)
@@ -51,6 +51,15 @@ public class PlayerServiceData implements PlayerService
       countryDataGateway.addCountry(player.getNationality());
   }
 
+  public List<Player> getAllPlayers() {
+    return playerDataGateway.getAllPlayers();
+  }
+
+  public List<Player> getPlayerByPos(int id) {
+
+    return playerDataGateway.getPlayersByPos(id);
+  }
+
   public Collection<Position> getPositions()
   {
     return positionDataGateway.getPositions();
@@ -59,6 +68,10 @@ public class PlayerServiceData implements PlayerService
   public Position getPosition(int positionId)
   {
     return positionDataGateway.getPosition(positionId);
+  }
+
+  public List<Position> getPlayerPos(int playerId) {
+    return positionDataGateway.getPlayerPos(playerId);
   }
 }
 

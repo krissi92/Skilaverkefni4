@@ -14,5 +14,5 @@ public interface FantasyTeamDataGateway {
     public FantasyTeam getFantasyTeam(int userId);
     public void addPlayerToFantasyTeam(int fantasyTeamId, int userId);
     public void createFantasyTeam(FantasyTeam fantasyTeam);
-
+    public void deleteFantasyTeam(int fantasyTeamId);
 }

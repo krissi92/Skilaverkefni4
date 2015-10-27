@@ -64,8 +64,6 @@ public class FantasyTeamData extends RuData implements FantasyTeamDataGateway {
             log.warning("Duplicate items");
         }
 
-
-
     }
 
     public void createFantasyTeam(FantasyTeam fantasyTeam) {
@@ -99,10 +97,11 @@ public class FantasyTeamData extends RuData implements FantasyTeamDataGateway {
             }
         }
 
+    }
 
-
-
-
-
+    public void deleteFantasyTeam(int fantasyTeamId) {
+        String sql = "select * from fantasyteam where fantasyteamid = ?";
+        JdbcTemplate DeleteQuery = new JdbcTemplate(getDataSource());
+        DeleteQuery.update(sql, fantasyTeamId);
     }
 }

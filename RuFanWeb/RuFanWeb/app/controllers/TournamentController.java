@@ -1,6 +1,7 @@
 package controllers;
 
 import is.rufan.player.domain.Player;
+import is.rufan.player.domain.Position;
 import is.rufan.player.service.PlayerService;
 import is.rufan.tournament.domain.FantasyTeam;
 import is.rufan.tournament.service.FantasyTeamService;
@@ -9,10 +10,14 @@ import is.rufan.user.domain.User;
 import is.rufan.user.service.UserService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
-import play.data.Form;
+import static play.data.Form.*;
+import play.data.*;
+import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.fantasyTeam;
+import views.html.editFantasyTeam;
+import views.html.summary;
+import views.html.user;
 
 import java.util.List;
 
@@ -29,7 +34,7 @@ public class TournamentController extends Controller {
     final TournamentService tournamentService = (TournamentService)ctx.getBean("tournamentService");
     final FantasyTeamService fantasyTeamService = (FantasyTeamService)ctx.getBean("fantasyTeamService");
     final UserService userService = (UserService)ctx.getBean("userService");
-    final static Form<Player> playerForm = form(Player.class);
+    final static Form<Player> playerFormer = form(Player.class);
 
 
     public Result fantasyTeam() {
@@ -38,17 +43,22 @@ public class TournamentController extends Controller {
 
         // User has to be logged in
         if(username != null) {
-            FantasyTeam currentFantasyTeam = fantasyTeamService.getFantasyTeam(currentUser.getId());
-            //Form<Player> playerForm =
+            //FantasyTeam currentFantasyTeam = fantasyTeamService.getFantasyTeam(currentUser.getId());
+            /*if(currentFantasyTeam.equals(null)){
+                //player doesnt have fantasy team
+            }*/
 
+
+            Form<Player> playerForm = playerFormer.fill(new Player());
+
+            return ok(editFantasyTeam.render(playerForm));
         }
-            return ok(fantasyTeam.render());
-
         else {
             return redirect("/login");
         }
+
     }
-    public Result editFantasyTeam(){
+    public Result editFantasyTeams(){
 
         String username = session("username");
         User currentUser = userService.getUserByUsername(username);
@@ -57,10 +67,6 @@ public class TournamentController extends Controller {
 
 
         }
-    }
-    public Result getPlayers(){
-        List<Player> players = playerService.getPlayers();
-
-
+        return null;
     }
 }

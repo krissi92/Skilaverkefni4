@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Skilaverkefni4/RuFanWeb/RuFanWeb/conf/routes
-// @DATE:Mon Oct 26 19:41:48 GMT 2015
+// @DATE:Tue Oct 27 03:29:37 GMT 2015
 
 import play.api.routing.JavaScriptReverseRoute
 import play.api.mvc.{ QueryStringBindable, PathBindable, Call, JavascriptLiteral }
@@ -15,7 +15,7 @@ import _root_.play.libs.F
 package controllers.javascript {
   import ReverseRouteContext.empty
 
-  // @LINE:19
+  // @LINE:27
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -23,7 +23,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:19
+    // @LINE:27
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -155,6 +155,56 @@ package controllers.javascript {
   
   }
 
+  // @LINE:18
+  class ReversePlayerController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:20
+    def getPlayers: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PlayerController.getPlayers",
+      """
+        function(id) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/players/" + (""" + implicitly[PathBindable[Int]].javascriptUnbind + """)("id", id)})
+        }
+      """
+    )
+  
+    // @LINE:19
+    def getPositions: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PlayerController.getPositions",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/positions"})
+        }
+      """
+    )
+  
+    // @LINE:18
+    def getGoalkeepers: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PlayerController.getGoalkeepers",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/goalkeepers"})
+        }
+      """
+    )
+  
+    // @LINE:21
+    def getPlayerPosition: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PlayerController.getPlayerPosition",
+      """
+        function(id) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/positions/" + (""" + implicitly[PathBindable[Int]].javascriptUnbind + """)("id", id)})
+        }
+      """
+    )
+  
+  }
+
   // @LINE:14
   class ReverseTeamController(_prefix: => String) {
 
@@ -189,6 +239,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "fantasyTeam"})
+        }
+      """
+    )
+  
+    // @LINE:16
+    def editFantasyTeams: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.TournamentController.editFantasyTeams",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "fantasyTeam"})
         }
       """
     )
